@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const generateHTML = require("./utils/generateHTML");
 const Manager = require("../lib/manager");
+const getAnswers = require("./getAnswers");
 
 const questions = [
   // Define the questions.
@@ -30,10 +31,9 @@ const questions = [
 ];
 
 const init = async () => {
-  // Ask the questions.
-  const answers = await inquirer.prompt(questions);
+  const getAnswers = getAnswers();
 
-  const generatedHTML = generateHTML(answers);
+  const generatedHTML = generateHTML(getAnswers);
 
   writeToFile(generatedHTML);
 };
