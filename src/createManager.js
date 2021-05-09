@@ -1,6 +1,6 @@
 const Manager = require("../lib/manager");
 const baseQuestions = require("./baseQuestions");
-const inquirer = require("inquirer");
+const getAnswers = require("./getAnswers");
 
 const createManager = async () => {
   const questions = [
@@ -12,7 +12,7 @@ const createManager = async () => {
     },
   ];
 
-  const answers = await inquirer.prompt(questions);
+  const answers = await getAnswers(questions);
 
   const manager = new Manager(answers);
 
