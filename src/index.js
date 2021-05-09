@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
 const generateHTML = require("./utils/generateHTML");
-const fs = require("fs");
 const Manager = require("../lib/manager");
 
 const questions = [
@@ -29,18 +28,6 @@ const questions = [
     ],
   },
 ];
-
-const writeToFile = (fileName) => {
-  const callback = (err) => {
-    if (err) {
-      console.info(err);
-    } else {
-      console.info("Team Website Created");
-    }
-  };
-
-  fs.writeFile("index.html", fileName, callback);
-};
 
 const init = async () => {
   // Ask the questions.
