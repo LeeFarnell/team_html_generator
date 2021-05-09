@@ -1,13 +1,32 @@
 const inquirer = require("inquirer");
 const generateHTML = require("./utils/generateHTML");
 const fs = require("fs");
+const Manager = require("../lib/manager");
 
 const questions = [
   // Define the questions.
   {
-    type: "input",
-    message: "What is your full name?",
-    name: "name",
+    type: "list",
+    message: "What type of employee would you like to enter?",
+    name: "employee",
+    choices: [
+      {
+        name: "Manager",
+        value: "manager",
+      },
+      {
+        name: "Engineer",
+        value: "engineer",
+      },
+      {
+        name: "Intern",
+        value: "intern",
+      },
+      {
+        name: "Exit",
+        value: "exit",
+      },
+    ],
   },
 ];
 

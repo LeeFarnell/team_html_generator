@@ -1,5 +1,5 @@
 const generateHTML = (answers) => {
-  const { name } = answers;
+  const { employee, manager, engineer, intern, exit } = answers;
 
   return `<!DOCTYPE html>
   <html lang="en">
@@ -34,8 +34,8 @@ const generateHTML = (answers) => {
           <div class="row">
             <div class="card m-1 p-0 col-3 shadow-sm">
               <div class="card-body bg-info">
-                <h5 class="card-title">${name}</h5>
-                <p class="card-text">Role: Manager</p>
+                <h5 class="card-title">Name</h5>
+                <p class="card-text">Role: ${manager}</p>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: 001</li>
