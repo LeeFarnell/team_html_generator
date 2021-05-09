@@ -1,40 +1,11 @@
 const generateHTML = require("./utils/generateHTML");
-const getAnswers = require("./getAnswers");
+const allEmployees = require("./allEmployees");
 const writeToFile = require("./writeToFile");
-const createManager = require("./createManager");
 
 const init = async () => {
-  const questions = [
-    {
-      type: "list",
-      message: "What type of employee would you like to enter?",
-      name: "employee",
-      choices: [
-        {
-          name: "Manager",
-          value: "manager",
-        },
-        {
-          name: "Engineer",
-          value: "engineer",
-        },
-        {
-          name: "Intern",
-          value: "intern",
-        },
-        {
-          name: "Exit",
-          value: "exit",
-        },
-      ],
-    },
-  ];
+  const employees = await allEmployees();
 
-  const { employee } = await getAnswers(questions);
-
-  const manager = await createManager();
-
-  const generatedHTML = generateHTML({ employee, manager });
+  const generatedHTML = generateHTML({ employees });
 
   writeToFile(generatedHTML);
 };

@@ -32,7 +32,11 @@
             <div class="card m-1 p-0 col-3 shadow-sm">
               <div class="card-body bg-info">
                 <h5 class="card-title">Name</h5>
-                <p class="card-text">Role: [object Object]</p>
+                <p class="card-text">Role: async ({ employee }) => {
+    if ({ employee } === "Manager") {
+      await createManager();
+    }
+  }</p>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: 001</li>
