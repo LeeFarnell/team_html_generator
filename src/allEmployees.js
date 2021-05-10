@@ -1,6 +1,7 @@
 const getAnswers = require("./getAnswers");
 const createManager = require("./createManager");
 const createIntern = require("./createIntern");
+const createEngineer = require("./createEngineer");
 
 const questionAndAnswers = async () => {
   const questions = [
@@ -51,6 +52,9 @@ const getAllEmployees = async () => {
       } else if (answers.employee === "intern") {
         const intern = await createIntern();
         employees.push(intern);
+      } else if (answers.employee === "engineer") {
+        const engineer = await createEngineer();
+        employees.push(engineer);
       }
     }
   }
