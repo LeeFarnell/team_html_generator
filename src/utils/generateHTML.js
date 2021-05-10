@@ -2,9 +2,7 @@ const Manager = require("../../lib/Manager");
 const Engineer = require("../../lib/Engineer");
 const Intern = require("../../lib/Intern");
 
-const generateHTML = (employees) => {
-  const { manager, engineer, intern } = employees;
-
+const generateHTML = () => {
   return `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -38,15 +36,15 @@ const generateHTML = (employees) => {
           <div class="row">
             <div class="card m-1 p-0 col-3 shadow-sm">
               <div class="card-body bg-info">
-                <h5 class="card-title">${manager.name}</h5>
-                <p class="card-text">Role: ${manager}</p>
+                <h5 class="card-title">${Manager.name}</h5>
+                <p class="card-text">Role: ${Manager}</p>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${manager.employeeID}</li>
+                <li class="list-group-item">ID: ${Manager.employeeID}</li>
                 <li class="list-group-item">
-                  Email: <a href="mailto:${manager.email}">${manager.email}</a>
+                  Email: <a href="mailto:${Manager.email}">${Manager.email}</a>
                 </li>
-                <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
+                <li class="list-group-item">Office Number: ${Manager.officeNumber}</li>
               </ul>
             </div>
             <div class="card p-0 m-1 col-3 shadow-sm">
