@@ -7,6 +7,10 @@ const init = async () => {
 
   const generatedHTML = generateHTML({ employees });
 
+  console.log({ employees }, "2");
+
+  module.exports = employees;
+
   writeToFile(generatedHTML);
 };
 
