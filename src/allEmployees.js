@@ -60,6 +60,7 @@ const getAllEmployees = async () => {
   }
 
   console.log(employees);
+  return employees;
 };
 
 module.exports = getAllEmployees;

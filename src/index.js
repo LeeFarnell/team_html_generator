@@ -5,11 +5,11 @@ const writeToFile = require("./writeToFile");
 const init = async () => {
   const employees = await allEmployees();
 
-  const generatedHTML = generateHTML({ employees });
+  console.log(employees, "abc");
 
-  console.log({ employees }, "2");
+  const generatedHTML = generateHTML(employees);
 
-  module.exports = employees;
+  console.log(employees, "2");
 
   writeToFile(generatedHTML);
 };

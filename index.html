@@ -1,30 +1,4 @@
-const Manager = require("../../lib/Manager");
-const Engineer = require("../../lib/Engineer");
-const Intern = require("../../lib/Intern");
-
-const generateHTML = (employees) => {
-  const renderCards = (employee) => {
-    return `<div class="row">
-    <div class="card m-1 p-0 col-3 shadow-sm">
-      <div class="card-body bg-info">
-        <h5 class="card-title">${employee.name}</h5>
-        <p class="card-text">Role: Job Role</p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID: ${employee.employeeID}</li>
-        <li class="list-group-item">
-          Email: <a href="mailto:${employee.email}">${employee.email}</a>
-        </li>
-        <li class="list-group-item">Office Number: ${employee.officeNumber}</li>
-      </ul>
-    </div>`;
-  };
-
-  console.log(employees, "1");
-
-  const employeeCards = employees.map(renderCards);
-
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
@@ -54,7 +28,20 @@ const generateHTML = (employees) => {
       </header>
       <main>
         <div class="container m-0">
-        ${employeeCards.join("")}
+        <div class="row">
+    <div class="card m-1 p-0 col-3 shadow-sm">
+      <div class="card-body bg-info">
+        <h5 class="card-title">bob</h5>
+        <p class="card-text">Role: Job Role</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ID: 1</li>
+        <li class="list-group-item">
+          Email: <a href="mailto:bob@mail.com">bob@mail.com</a>
+        </li>
+        <li class="list-group-item">Office Number: 12345</li>
+      </ul>
+    </div>
             <div class="card p-0 m-1 col-3 shadow-sm">
               <div class="card-body bg-info">
                 <h5 class="card-title">Engineer Name</h5>
@@ -98,7 +85,4 @@ const generateHTML = (employees) => {
     </body>
   </html>
   
-  `;
-};
-
-module.exports = generateHTML;
+  
