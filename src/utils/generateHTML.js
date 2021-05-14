@@ -1,23 +1,27 @@
 const Manager = require("../lib/Manager");
-const Engineer = require("../lib/Engineer");
-const Intern = require("../lib/Intern");
+
+const renderManagerCard = (employee) => {
+  return `<div class="row">
+  <div class="card m-1 p-0 col-3 shadow-sm">
+    <div class="card-body bg-info">
+      <h5 class="card-title">${employee.name}</h5>
+      <p class="card-text">Role: Job Role</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: ${employee.employeeID}</li>
+      <li class="list-group-item">
+        Email: <a href="mailto:${employee.email}">${employee.email}</a>
+      </li>
+      <li class="list-group-item">Office Number: ${employee.officeNumber}</li>
+    </ul>
+  </div>`;
+};
 
 const generateHTML = (employees) => {
   const renderCards = (employee) => {
-    return `<div class="row">
-    <div class="card m-1 p-0 col-3 shadow-sm">
-      <div class="card-body bg-info">
-        <h5 class="card-title">${employee.name}</h5>
-        <p class="card-text">Role: Job Role</p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID: ${employee.employeeID}</li>
-        <li class="list-group-item">
-          Email: <a href="mailto:${employee.email}">${employee.email}</a>
-        </li>
-        <li class="list-group-item">Office Number: ${employee.officeNumber}</li>
-      </ul>
-    </div>`;
+    if (employee instanceof Manager) {
+      return renderManagerCard(employee);
+    }
   };
 
   const employeeCards = employees.map(renderCards);
