@@ -1,4 +1,4 @@
-const Engineer = require("../lib/engineer");
+const Engineer = require("./lib/engineer");
 const baseQuestions = require("./baseQuestions");
 const getAnswers = require("./getAnswers");
 

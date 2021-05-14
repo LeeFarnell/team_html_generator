@@ -58,8 +58,6 @@ const getAllEmployees = async () => {
       }
     }
   }
-
-  console.log(employees);
   return employees;
 };
 
