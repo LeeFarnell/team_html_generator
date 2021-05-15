@@ -7,7 +7,7 @@ const createEngineer = async () => {
     ...baseQuestions,
     {
       type: "input",
-      message: "Please provide the engineers GitHub link.",
+      message: "Please provide the engineers GitHub username.",
       name: "github",
     },
   ];

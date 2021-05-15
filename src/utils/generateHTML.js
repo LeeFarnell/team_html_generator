@@ -31,7 +31,7 @@ const renderEngineerCard = (employee) => {
       <li class="list-group-item">
         Email: <a href="mailto:${employee.email}">${employee.email}</a>
       </li>
-      <li class="list-group-item">GitHub Link: ${employee.github}</li>
+      <li class="list-group-item">GitHub Link: <a href="https://github.com/${employee.github}">${employee.github}</a> </li>
     </ul>
   </div>`;
 };
