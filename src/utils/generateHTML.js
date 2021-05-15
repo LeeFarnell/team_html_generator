@@ -3,11 +3,11 @@ const Intern = require("../lib/Intern");
 const Manager = require("../lib/Manager");
 
 const renderManagerCard = (employee) => {
-  return `<div class="row">
+  return `
   <div class="card m-1 p-0 col-3 shadow-sm">
     <div class="card-body bg-info">
       <h5 class="card-title">${employee.name}</h5>
-      <p class="card-text">Role: Manager</p>
+      <p class="card-text">Role: Manager <span><i class="fas fa-briefcase"></i></span> </p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${employee.employeeID}</li>
@@ -20,11 +20,13 @@ const renderManagerCard = (employee) => {
 };
 
 const renderEngineerCard = (employee) => {
-  return `<div class="row">
+  return `
   <div class="card m-1 p-0 col-3 shadow-sm">
     <div class="card-body bg-info">
       <h5 class="card-title">${employee.name}</h5>
-      <p class="card-text">Role: Engineer</p>
+      <p class="card-text">Role: Engineer <span><i class="fas fa-wrench"></i>
+
+      </span></p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${employee.employeeID}</li>
@@ -37,11 +39,13 @@ const renderEngineerCard = (employee) => {
 };
 
 const renderInternCard = (employee) => {
-  return `<div class="row">
+  return `
   <div class="card m-1 p-0 col-3 shadow-sm">
     <div class="card-body bg-info">
       <h5 class="card-title">${employee.name}</h5>
-      <p class="card-text">Role: Intern</p>
+      <p class="card-text">Role: Intern <span><i class="fas fa-graduation-cap"></i>
+
+      </span></p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${employee.employeeID}</li>
@@ -92,6 +96,14 @@ const generateHTML = (employees) => {
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
         crossorigin="anonymous"
       />
+
+      <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+
       <link rel="stylesheet" href="./sample-style.css" />
       <title>My Team</title>
     </head>
@@ -102,7 +114,7 @@ const generateHTML = (employees) => {
         </div>
       </header>
       <main>
-        <div class="container m-0">
+        <div class="container m-0 row text-center">
         ${employeeCards.join("")}
             
         </div>
