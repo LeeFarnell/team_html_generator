@@ -22,7 +22,7 @@ describe("Engineer Class", () => {
       expect(actual.name).toEqual(mockAnswer.name),
         expect(actual.employeeID).toEqual(mockAnswer.employeeID),
         expect(actual.email).toEqual(mockAnswer.email),
-        expect(actual.github).toEqual("http://www.github.com/LeeFarnell");
+        expect(actual.github).toEqual(mockAnswer.github);
       expect(actual.getRole()).toEqual(mockAnswer.role);
     });
   });
