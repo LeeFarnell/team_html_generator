@@ -1,3 +1,5 @@
+const Engineer = require("../lib/Engineer");
+const Intern = require("../lib/Intern");
 const Manager = require("../lib/Manager");
 
 const renderManagerCard = (employee) => {
@@ -5,7 +7,7 @@ const renderManagerCard = (employee) => {
   <div class="card m-1 p-0 col-3 shadow-sm">
     <div class="card-body bg-info">
       <h5 class="card-title">${employee.name}</h5>
-      <p class="card-text">Role: Job Role</p>
+      <p class="card-text">Role: Manager</p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${employee.employeeID}</li>
@@ -17,11 +19,53 @@ const renderManagerCard = (employee) => {
   </div>`;
 };
 
+const renderEngineerCard = (employee) => {
+  return `<div class="row">
+  <div class="card m-1 p-0 col-3 shadow-sm">
+    <div class="card-body bg-info">
+      <h5 class="card-title">${employee.name}</h5>
+      <p class="card-text">Role: Engineer</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: ${employee.employeeID}</li>
+      <li class="list-group-item">
+        Email: <a href="mailto:${employee.email}">${employee.email}</a>
+      </li>
+      <li class="list-group-item">GitHub Link: ${employee.github}</li>
+    </ul>
+  </div>`;
+};
+
+const renderInternCard = (employee) => {
+  return `<div class="row">
+  <div class="card m-1 p-0 col-3 shadow-sm">
+    <div class="card-body bg-info">
+      <h5 class="card-title">${employee.name}</h5>
+      <p class="card-text">Role: Intern</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: ${employee.employeeID}</li>
+      <li class="list-group-item">
+        Email: <a href="mailto:${employee.email}">${employee.email}</a>
+      </li>
+      <li class="list-group-item">School: ${employee.school}</li>
+    </ul>
+  </div>`;
+};
+
 const generateHTML = (employees) => {
   const renderCards = (employee) => {
     if (employee instanceof Manager) {
       console.log(employee, "1");
       return renderManagerCard(employee);
+    }
+    if (employee instanceof Engineer) {
+      console.log(employee, "1");
+      return renderEngineerCard(employee);
+    }
+    if (employee instanceof Intern) {
+      console.log(employee, "1");
+      return renderInternCard(employee);
     }
   };
 
@@ -60,35 +104,7 @@ const generateHTML = (employees) => {
       <main>
         <div class="container m-0">
         ${employeeCards.join("")}
-            <div class="card p-0 m-1 col-3 shadow-sm">
-              <div class="card-body bg-info">
-                <h5 class="card-title">Engineer Name</h5>
-                <p class="card-text">Role: Engineer</p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: 002</li>
-                <li class="list-group-item">
-                  Email: <a href="mailto:alice@email.com">alice@email.com</a>
-                </li>
-                <li class="list-group-item">
-                  GitHub: <a href="https://github.com/">UserName</a>
-                </li>
-              </ul>
-            </div>
-            <div class="card p-0 m-1 col-3 shadow-sm">
-              <div class="card-body bg-info">
-                <h5 class="card-title">Intern Name</h5>
-                <p class="card-text">Role: Intern</p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: 003</li>
-                <li class="list-group-item">
-                  Email: <a href="mailto:steve@email.com">bob@email.com</a>
-                </li>
-                <li class="list-group-item">School: University Name</li>
-              </ul>
-            </div>
-          </div>
+            
         </div>
       </main>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
