@@ -4,6 +4,22 @@ class Employee {
     this.employeeID = employeeID;
     this.email = email;
   }
+
+  getName() {
+    return this.name;
+  }
+
+  getId() {
+    return this.employeeID;
+  }
+
+  getEmail() {
+    return this.email;
+  }
+
+  getRole() {
+    return "Employee";
+  }
 }
 
 module.exports = Employee;
