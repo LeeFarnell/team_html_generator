@@ -114,7 +114,7 @@ const generateHTML = (employees) => {
         </div>
       </header>
       <main>
-        <div class="container m-0 row text-center">
+        <div class="m-0 row text-center">
         ${employeeCards.join("")}
             
         </div>
