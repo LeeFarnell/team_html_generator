@@ -50,7 +50,7 @@ https://www.mit.edu/~amini/LICENSE.md
 
 ## Video Demonstration
 
-https://drive.google.com/file/d/1t51qbkpPSMiUWnwHyJGkzgPKjcTMfMoS/view
+https://drive.google.com/file/d/1IhTsxlRxa9LF06mCjiPrmTOBaPvJRgzn/view
 
 ## Tests
 
