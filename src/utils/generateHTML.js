@@ -60,22 +60,17 @@ const renderInternCard = (employee) => {
 const generateHTML = (employees) => {
   const renderCards = (employee) => {
     if (employee instanceof Manager) {
-      console.log(employee, "1");
       return renderManagerCard(employee);
     }
     if (employee instanceof Engineer) {
-      console.log(employee, "1");
       return renderEngineerCard(employee);
     }
     if (employee instanceof Intern) {
-      console.log(employee, "1");
       return renderInternCard(employee);
     }
   };
 
   const employeeCards = employees.map(renderCards);
-
-  console.log(employeeCards);
 
   return `<!DOCTYPE html>
   <html lang="en">
