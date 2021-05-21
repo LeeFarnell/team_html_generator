@@ -41,18 +41,20 @@ const getAllEmployees = async () => {
   let inProgress = true;
 
   while (inProgress) {
-    const answers = await questionAndAnswers();
+    const { employee } = await questionAndAnswers();
 
-    if (answers.employee === "exit") {
+    if (employee === "exit") {
       inProgress = false;
     } else {
-      if (answers.employee === "manager") {
+      if (employee === "manager") {
         const manager = await createManager();
         employees.push(manager);
-      } else if (answers.employee === "intern") {
+      }
+      if (employee === "intern") {
         const intern = await createIntern();
         employees.push(intern);
-      } else if (answers.employee === "engineer") {
+      }
+      if (employee === "engineer") {
         const engineer = await createEngineer();
         employees.push(engineer);
       }
