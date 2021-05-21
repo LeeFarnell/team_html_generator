@@ -6,7 +6,6 @@ describe("Manager Class", () => {
     employeeID: "812",
     email: "leefarnell@mac.com",
     officeNumber: "0121 212 1212",
-    role: "Manager",
   };
 
   describe("Constructor Test", () => {
@@ -19,11 +18,10 @@ describe("Manager Class", () => {
     it("should set the all the employee details inside the object ", () => {
       const actual = new Manager(mockAnswer);
 
-      expect(actual.name).toEqual(mockAnswer.name),
-        expect(actual.employeeID).toEqual(mockAnswer.employeeID),
-        expect(actual.email).toEqual(mockAnswer.email),
-        expect(actual.officeNumber).toEqual(mockAnswer.officeNumber);
-      expect(actual.getRole()).toEqual(mockAnswer.role);
+      expect(actual.name).toEqual(mockAnswer.name);
+      expect(actual.employeeID).toEqual(mockAnswer.employeeID);
+      expect(actual.email).toEqual(mockAnswer.email);
+      expect(actual.officeNumber).toEqual(mockAnswer.officeNumber);
     });
   });
 
@@ -65,7 +63,7 @@ describe("Manager Class", () => {
 
       const result = actual.getRole();
 
-      expect(result).toEqual(mockAnswer.role);
+      expect(result).toEqual("Manager");
     });
   });
 });
