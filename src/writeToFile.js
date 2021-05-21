@@ -1,6 +1,7 @@
 const fs = require("fs");
+const path = require("path");
 
-const writeToFile = (fileName) => {
+const writeToFile = (data) => {
   const callback = (err) => {
     if (err) {
       console.info(err);
@@ -9,6 +10,8 @@ const writeToFile = (fileName) => {
     }
   };
 
-  fs.writeFile("index.html", fileName, callback);
+  const filePath = path.join(__dirname, "../dist", "index.html");
+
+  fs.writeFile(filePath, data, callback);
 };
 module.exports = writeToFile;

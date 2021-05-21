@@ -6,7 +6,6 @@ describe("Engineer Class", () => {
     employeeID: "812",
     email: "leefarnell@mac.com",
     github: "http://www.github.com/LeeFarnell",
-    role: "Engineer",
   };
 
   describe("Constructor Test", () => {
@@ -19,11 +18,10 @@ describe("Engineer Class", () => {
     it("should set the all the Engineer details inside the object ", () => {
       const actual = new Engineer(mockAnswer);
 
-      expect(actual.name).toEqual(mockAnswer.name),
-        expect(actual.employeeID).toEqual(mockAnswer.employeeID),
-        expect(actual.email).toEqual(mockAnswer.email),
-        expect(actual.github).toEqual(mockAnswer.github);
-      expect(actual.getRole()).toEqual(mockAnswer.role);
+      expect(actual.name).toEqual(mockAnswer.name);
+      expect(actual.employeeID).toEqual(mockAnswer.employeeID);
+      expect(actual.email).toEqual(mockAnswer.email);
+      expect(actual.github).toEqual(mockAnswer.github);
     });
   });
 
@@ -65,7 +63,7 @@ describe("Engineer Class", () => {
 
       const result = actual.getRole();
 
-      expect(result).toEqual(mockAnswer.role);
+      expect(result).toEqual("Engineer");
     });
   });
 });
